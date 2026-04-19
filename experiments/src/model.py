@@ -1,3 +1,10 @@
+import torch
+import torch.nn as nn
+from lora import LoRa
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import BitsAndBytesConfig
+import torch.nn.utils.parametrize as parametrize
+
 class Model:
     """
     Generic model class to interact with the llm
@@ -7,7 +14,7 @@ class Model:
         self,
         model_id="meta-llama/Llama-3.2-3B-Instruct",
         lora_rank=16,
-        lora_alpha=32,
+        lora_alpha=32, #scaling factor
         target_modules=["q_proj", "v_proj"],
     ):
         """

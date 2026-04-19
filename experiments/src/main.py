@@ -1,21 +1,11 @@
-#Libraries
-import os
-import torch
-import torch.nn as nn
+#Classes and libs
 import warnings
-import numpy as np
-import json
-from datetime import datetime
-from tqdm import tqdm
-import torch.nn.utils.parametrize as parametrize
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from transformers import BitsAndBytesConfig
-from lora import LoRa
 from llamaguard import LlamaGuard
 from cmaes import CMAESAttack
 from model import Model
 
-#Just looks bad
+
+#Just looks ugly
 warnings.filterwarnings("ignore", message="MatMul8bitLt")
 
 
