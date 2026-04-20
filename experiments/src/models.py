@@ -5,7 +5,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from transformers import BitsAndBytesConfig
 import torch.nn.utils.parametrize as parametrize
 
-class Model:
+class Llama3_2_3B:
     """
     Generic model class to interact with the llm
     """

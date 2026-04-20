@@ -4,7 +4,7 @@ import torch.nn as nn
 
 class LoRa(nn.Module): 
     """
-    Instead of updating W directly, we learn a small additive update: W' = W + (B @ A) * (alpha / rank)
+    W' = W + (B @ A) * (alpha / rank)
     Note B is initialized with zeros — so ΔW = BA = 0 at start (model unchanged)
     """
     def __init__(self, feat_in, feat_out, rank=16, alpha=32, device="cpu", dtype=torch.bfloat16):

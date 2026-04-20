@@ -2,14 +2,14 @@
 import warnings
 from llamaguard import LlamaGuard
 from cmaes import CMAESAttack
-from model import Model
+from models import Llama3_2_3B
 
 
 #Just looks ugly
 warnings.filterwarnings("ignore", message="MatMul8bitLt")
 
 
-llama = Model()
+llama = Llama3_2_3B()
 guard = LlamaGuard()
 
 HARMBENCH_PROMPTS = [
