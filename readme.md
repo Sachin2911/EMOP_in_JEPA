@@ -1,3 +1,13 @@
+# Evolutionary Multi-Objective Planning in JEPA
+
+
+# Documents Produced
+> **Note:** All documentation can be found in the `docs` subfolder.
+- [x] Annotated Bibliography
+- [x] Literature Review
+- [x] Research Proposal
+
+
 # Project Trajectory
 ## Safe AI via Evolutionary Algorithms
 
