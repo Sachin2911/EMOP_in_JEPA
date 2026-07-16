@@ -1,5 +1,6 @@
 # Evolutionary Multi-Objective Planning in JEPA
 
+> **Note:** There is some project info 
 
 # Documents Produced
 > **Note:** All documentation can be found in the `docs` subfolder.
