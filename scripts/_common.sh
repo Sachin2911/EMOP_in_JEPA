@@ -73,6 +73,13 @@ configure_huggingface() {
 
 sync_python_env() {
   cd "${REPO_ROOT}"
+  # After a folder rename, a previously activated venv can leave VIRTUAL_ENV
+  # pointing at the old absolute path; uv then warns and ignores it.
+  local expected_venv="${REPO_ROOT}/.venv"
+  if [[ -n "${VIRTUAL_ENV:-}" && "${VIRTUAL_ENV}" != "${expected_venv}" ]]; then
+    echo "[setup] clearing stale VIRTUAL_ENV=${VIRTUAL_ENV} (expected ${expected_venv})"
+    unset VIRTUAL_ENV
+  fi
   if [[ -f "${REPO_ROOT}/uv.lock" ]]; then
     echo "[setup] uv sync --frozen"
     uv sync --frozen --extra dev

@@ -8,8 +8,8 @@ set -euo pipefail
 # Make Vast account env vars visible in later SSH sessions
 env >> /etc/environment
 
-REPO_URL="${REPO_URL:-https://github.com/YOUR_USER/EMOP_in_JEPA.git}"
-REPO_DIR="${REPO_DIR:-/workspace/EMOP_in_JEPA}"
+REPO_URL="${REPO_URL:-https://github.com/YOUR_USER/Safety-Dial.git}"
+REPO_DIR="${REPO_DIR:-/workspace/Safety-Dial}"
 mkdir -p "$(dirname "${REPO_DIR}")"
 
 if [[ -d "${REPO_DIR}/.git" ]]; then

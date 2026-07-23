@@ -5,7 +5,7 @@
 ## Vast setup
 
 ```bash
-git clone https://github.com/Sachin2911/EMOP_in_JEPA.git
+git clone https://github.com/Sachin2911/Safety-Dial.git
 cd Safety-Dial
 bash scripts/vast_setup.sh
 ```
