@@ -4,13 +4,17 @@
 
 This Honours project asks whether **selection pressure can substitute for reward engineering** in safe RL. A frozen JEPA world model (LeWM) imagines plans in latent space; a multi-objective evolutionary planner (NSGA-II) trades off task performance against structural safety signals from the model itself, returning a Pareto front so the safety-performance operating point is chosen at deployment rather than fixed before training.
 
+**Project name:** SafetyDial. The dial is the Pareto front: you choose the safety-performance operating point at deployment instead of locking in a λ penalty before training.
+
 ## Project snapshot
 
-- **Title:** Evolutionary Multi-Objective Planning in JEPA (EMOP in JEPA)
+- **Name:** SafetyDial
+- **Title:** SafetyDial: Selection Pressure for Safe Latent Planning in JEPA
+- **Former working title:** Evolutionary Multi-Objective Planning in JEPA (EMOP in JEPA); prefer SafetyDial in new writing
 - **Slogan:** Selection pressure as an alternative to hand-crafted reward penalties
 - **Student:** Sachin Mohan (2699183), BSc Honours CS, University of the Witwatersrand
 - **Supervisor:** Geraud Nangue Tasse
-- **Guiding move:** swap *tuning* (penalty weights, hand-crafted costs) for *search* (Pareto front over imagined plans)
+- **Guiding move:** swap *tuning* (penalty weights, hand-crafted costs) for *search* (Pareto front over imagined plans); the front is the dial
 
 ### Method (four phases)
 
@@ -43,14 +47,15 @@ This Honours project asks whether **selection pressure can substitute for reward
 When sources conflict, follow this order:
 
 1. `docs/ideation/` (living direction)
-2. `docs/researchProp/submitted/RP.pdf` (submitted JEPA + EMOP plan)
+2. `docs/researchProp/submitted/RP.pdf` (submitted JEPA + multi-objective latent planning plan)
 3. Everything else (`docs/litReview/`, early `readme.md`, AB framing)
 
-Do not let the older LLM-alignment / CoEvoRL story override the JEPA latent-planning + NSGA-II plan.
+Do not let the older LLM-alignment / CoEvoRL story override the SafetyDial plan (JEPA latent planning + NSGA-II Pareto safety). Older docs may say EMOP; treat that as the same project under the former working title.
 
 ## Glossary
 
-- **EMOP:** Evolutionary Multi-Objective Planning
+- **SafetyDial:** Project name. Pareto-front planning on a frozen JEPA world model so the safety-performance operating point is dialled at deployment, not baked in as a penalty weight
+- **EMOP:** Former working title (Evolutionary Multi-Objective Planning). Legacy only; prefer SafetyDial
 - **JEPA:** Joint-Embedding Predictive Architecture (predict in embedding space, not pixels)
 - **LeWM:** Le World Model; JEPA substrate used as the frozen planner world model
 - **CEM:** Cross-Entropy Method; LeWM’s default single-objective planner (baseline to replace)
@@ -63,10 +68,11 @@ Do not let the older LLM-alignment / CoEvoRL story override the JEPA latent-plan
 
 ## Agent must-know
 
+- Prefer the name **SafetyDial** in new writing, code, and discussion; EMOP is legacy.
 - Current thesis is **JEPA latent planning + NSGA-II Pareto safety**, not the lit review’s LLM/CoEvoRL story.
 - Prefer **ideation + submitted RP** over AB, LR, or `readme.md` when they conflict.
 - World model is **frozen LeWM**; novelty is the planner and structural safety objectives.
-- Safety is a **separate objective on the Pareto front**, not a tuned λ penalty in a scalar reward.
+- Safety is a **separate objective on the Pareto front** (the dial), not a tuned λ penalty in a scalar reward.
 - Primary envs are **Reacher** and **Push-T**; match CEM planning success before multi-objective work.
 - Must compare to **penalty-tuned CEM, constrained RL, and ROSARL**.
 - Follow the writing and PDF rules below.
