@@ -1,5 +1,9 @@
 # Agent notes
 
+## No em dashes
+
+Never use em dashes in project writing (LaTeX `---`, Unicode `—`, or pasted en/em dash characters used as clause breaks). Prefer commas, parentheses, colons, or a full stop. For compound modifiers such as safety-performance, use a plain hyphen (`-`), not `--` or `–`. When editing existing docs, remove any em dashes you find rather than leaving them.
+
 ## Compress paper PDFs before committing
 
 Papers under `docs/papers/` often ship with high-resolution embedded figures and can be tens of megabytes each. After adding or replacing any PDF in that tree, compress it with Ghostscript `/ebook` (downsamples images ~150 DPI; does **not** remove images or text).

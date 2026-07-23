@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Compile the ideation document.
+# Compile the ideation document (Wits CSAM report template).
 # All LaTeX sources live in ./latex; intermediate files stay in ./latex/build;
 # the final PDF lands here as ./ID.pdf.
 #
@@ -19,8 +19,21 @@ if [[ "${1:-}" == "clean" ]]; then
     exit 0
 fi
 
+mkdir -p "$BUILD_DIR"
 cd "$LATEX_DIR"
-latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir="$BUILD_DIR" main.tex
+
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory="$BUILD_DIR" main.tex
+
+# BibTeX must run inside build/ (openout_any blocks writes via absolute paths)
+(
+  cd "$BUILD_DIR"
+  export BIBINPUTS="${LATEX_DIR}:."
+  export BSTINPUTS="${LATEX_DIR}:."
+  bibtex main
+)
+
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory="$BUILD_DIR" main.tex
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory="$BUILD_DIR" main.tex
 
 cp "$BUILD_DIR/main.pdf" "$OUT_PDF"
 echo "PDF written to $OUT_PDF"
