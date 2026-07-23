@@ -1,4 +1,4 @@
-# Evolutionary Multi-Objective Planning in JEPA
+# SafetyDial: Evolutionary Multi-Objective Planning in JEPA
 
 > **Note:** There is some project info 
 
