@@ -1,6 +1,16 @@
 # SafetyDial: Evolutionary Multi-Objective Planning in JEPA
 
-> **Note:** There is some project info 
+> **Note:** There is some project info
+
+## Vast setup
+
+```bash
+git clone https://github.com/Sachin2911/EMOP_in_JEPA.git
+cd Safety-Dial
+bash scripts/vast_setup.sh
+```
+
+Put `WANDB_API_KEY`, `GITHUB_TOKEN`, and `HF_TOKEN` in Vast account Environment Variables first. Prefer hosts with `cuda_max_good>=13.0` so torch CUDA works.
 
 # Documents Produced
 > **Note:** All documentation can be found in the `docs` subfolder.
